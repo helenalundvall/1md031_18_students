@@ -1,0 +1,76 @@
+/*CSS for styling the Häliwood's burgers site*/
+
+/*@import url("reset.CSS");*/
+@import url("https://fonts.googleapis.com/css?family=Droid+Serif|Share+Tech+Mono");
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+
+/*---------Gemensam style----------------*/
+body {
+  font-family: Quicksand, sans-serif;
+  font-size: 3.5vh;
+  text-align: center;
+}
+
+.headers {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/*---------Style banner-------------------*/
+#mainheader {
+  margin: 50px auto;
+  border: 10px double #000000;
+  overflow: hidden;
+}
+
+#mainheadertext {
+  position: absolute;
+  width: 100%;
+  vertical-align: center;
+}
+
+#headerpic {
+  opacity: 1.0;
+}
+
+/*-------Style burgersection----------------*/
+#burgersection {
+  margin: 50px auto;
+  background-color: #000000;
+  color: #FFFFFF;
+  border: 10px double #FFFFFF;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 30vw 30vw 30vw;
+  overflow: hidden;
+}
+
+.box {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+/*---------Style deliveryinfo---------------*/
+#deliveryinfosection {
+  border: 10px double #000000;
+  margin: 50px auto;
+}
+
+form {
+  text-align: center;
+  width: 100%
+}
+
+/*--------Style orderbuttom------------------*/
+#orderbuttom {
+  border: 10px double #000000;
+  margin-bottom: 50px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #6A5ACD
+}
