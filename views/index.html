@@ -5,16 +5,16 @@
   <meta charset="utf-8"/>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="css/deli-very.css">
-  <script src="js/js_script.js"defer></script>
+
   <script type="text/javascript" src="js/menu.js"></script>
   <script src="https://vuejs.org/js/vue.js"defer></script>
+  <script src="js/js_script.js"defer></script>
   <script src="/vue/vue.js" defer></script>
   <script src="/socket.io/socket.io.js" defer></script>
   <script src="js/vue_script.js"defer></script>
 
   <!--script src="js/deli-very.js" defer></script>-->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DELI-VERY MAP</title>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 
 </head>
 
@@ -103,13 +103,12 @@
     <section id="orderinfosection">
 
       <h2> Click in the map! </h2>
-      <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
       <div class="view-box">
-        <div id="dots" v-on:click="addOrder">
+        <div id="dots" v-on:click="displayOrder">
             <div
               v-for="(order, key) in orders"
               v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
-              {{key}}
+              T
             </div>
         </div>
       </div>
@@ -119,7 +118,7 @@
     <button id="orderbuttom" v-on:click="markDone()" type="submit"><img width=100 src="https://i2.wp.com/anglicanfrontiers.com/wp-content/uploads/2018/01/Order-Now.png?ssl=1"></button>
     <br>
 
-    <div id="orderinfoShow" style="display:none;">
+    <div id="pressedbuttomID" style="display:none;">
       <p class="headers">Your order </p>
       Food: {{checkedBurgers}}<br><br>
       Name: {{deliveryName}} <br>
