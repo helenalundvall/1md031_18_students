@@ -12,10 +12,6 @@
   <script src="/vue/vue.js" defer></script>
   <script src="/socket.io/socket.io.js" defer></script>
   <script src="js/vue_script.js"defer></script>
-
-  <!--script src="js/deli-very.js" defer></script>-->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-
 </head>
 
 
@@ -26,128 +22,117 @@
       <img id="headerpic" src="https://www.freewebheaders.com/wordpress/wp-content/gallery/food/french-fries-natural-food-website-header-image.jpg">
     </section>
 
-<div id = "myID">
-  <section id="burgersection">
-    <h2 class="headers"> Menu </h2>
+    <div id = "myID">
+      <section id="burgersection">
+        <h2 class="headers"> Menu </h2>
 
-  <div class="wrapper" >
-    <div class = "box" v-for="burger in burgersArray" type = "checkbox">
-        <h4 class = headers> {{burger.name}} </h4>
-        <img :src= "burger.image" width="250">
-        <br>Kcal: {{burger.kcal}}
-        <br>Allergens: {{burger.allergens}}
-        <br>In stock: {{burger.inStock}}
-        <br>
-        <input type="checkbox" id="checkedBurger" :value="burger.name" v-model="checkedBurgers">
-        <label for="checkedBurger">Choose</label>
-    </div>
-  </div>
-  </section>
-
-  <section id="deliveryinfosection">
-    <h2 class = "headers"> Delivery information </h3>
-      <form>
-        <p>
-          <label for="deliveryName">Name</label><br>
-          <input v-model = "deliveryName" required="required" type="text" placeholder="First and Last name">
-<!--          {{deliveryName}} -->
-        </p>
-        <p>
-          <label for="deliveryMail">E-mail</label><br>
-          <input v-model ="deliveryMail" required="required" type="text" placeholder ="Mail address">
-<!--          {{deliveryMail}} -->
-
-<!--        </p>
-        <p>
-          <label for="deliveryStreet">Street</label><br>
-          <input v-model ="deliveryStreet" required="required" type="text" placeholder ="Street name">
-          {{deliveryStreet}} -->
-<!--        </p>
-        <p>
-          <label for="deliveryHouse">House number</label><br>
-          <input v-model.number ="deliveryHouse" required="required" type="number" placeholder ="House number">
-        {{deliveryHouse}}
-        </p> -->
-
-        <p>
-          <label for="Payment method">Payment method</label><br>
-          <select v-model = "selectedPaymentMethod" name="Payment method" id="Payment method">
-            <option disabled value="">Please select one</option>
-            <option>Mastercard</option>
-            <option>Visa</option>
-            <option>American Express</option>
-            <option>Cash upon arrival</option>
-          </select>
-<!--          {{selectedPaymentMethod}} -->
-        </p>
-        <p>
-          <fieldset>
-            <legend> Gender </legend>
-
-            <input type="radio" id="female" value="Female" v-model="gender">
-            <label for="female">Female</label>
-
-            <input type="radio" id="male" value="Male" v-model="gender">
-            <label for="male">Male</label>
-
-            <input type="radio" id="non-binary" value="Non-binary" v-model="gender">
-            <label for="non-binary">Non-binary </label>
-
-            <input type="radio" id="other" value="Other" v-model="gender">
-            <label for="other">Other</label>
-          </fieldset>
-        </p>
-      </form>
-    </section>
-
-    <section id="orderinfosection">
-
-      <h2> Click in the map! </h2>
-      <div class="view-box">
-        <div id="dots" v-on:click="displayOrder">
-            <div
-              v-for="(order, key) in orders"
-              v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
-              T
-            </div>
+        <div class="wrapper" >
+          <div class = "box" v-for="burger in burgersArray" type = "checkbox">
+            <h4 class = headers> {{burger.name}} </h4>
+            <img :src= "burger.image" width="250">
+            <br>Kcal: {{burger.kcal}}
+            <br>Allergens: {{burger.allergens}}
+            <br>In stock: {{burger.inStock}}
+            <br>
+            <input type="checkbox" id="checkedBurger" :value="burger.name" v-model="checkedBurgers">
+            <label for="checkedBurger">Choose</label>
+          </div>
         </div>
+      </section>
+
+      <section id="deliveryinfosection">
+        <h2 class = "headers"> Delivery information </h3>
+          <form>
+            <p>
+              <label for="deliveryName">Name</label><br>
+              <input v-model = "deliveryName" required="required" type="text" placeholder="First and Last name">
+              <!--          {{deliveryName}} -->
+            </p>
+            <p>
+              <label for="deliveryMail">E-mail</label><br>
+              <input v-model ="deliveryMail" required="required" type="text" placeholder ="Mail address">
+              <!--          {{deliveryMail}} -->
+
+              <!--        </p>
+              <p>
+              <label for="deliveryStreet">Street</label><br>
+              <input v-model ="deliveryStreet" required="required" type="text" placeholder ="Street name">
+              {{deliveryStreet}} -->
+              <!--        </p>
+              <p>
+              <label for="deliveryHouse">House number</label><br>
+              <input v-model.number ="deliveryHouse" required="required" type="number" placeholder ="House number">
+              {{deliveryHouse}}
+            </p> -->
+
+            <p>
+              <label for="Payment method">Payment method</label><br>
+              <select v-model = "selectedPaymentMethod" name="Payment method" id="Payment method">
+                <option disabled value="">Please select one</option>
+                <option>Mastercard</option>
+                <option>Visa</option>
+                <option>American Express</option>
+                <option>Cash upon arrival</option>
+              </select>
+              <!--          {{selectedPaymentMethod}} -->
+            </p>
+            <p>
+              <fieldset>
+                <legend> Gender </legend>
+
+                <input type="radio" id="female" value="Female" v-model="gender">
+                <label for="female">Female</label>
+
+                <input type="radio" id="male" value="Male" v-model="gender">
+                <label for="male">Male</label>
+
+                <input type="radio" id="non-binary" value="Non-binary" v-model="gender">
+                <label for="non-binary">Non-binary </label>
+
+                <input type="radio" id="other" value="Other" v-model="gender">
+                <label for="other">Other</label>
+              </fieldset>
+            </p>
+          </form>
+        </section>
+
+        <section id="orderinfosection">
+
+          <h2> Select delivery address in the map: </h2>
+          <div class="view-box">
+            <div id="dots" v-on:click="displayOrder">
+              <div v-bind:style="{ left: details.x + 'px', top: details.y + 'px'}">
+                T
+              </div>
+            </div>
+          </div>
+
+
+          <br>
+          <button id="orderbuttom" v-on:click="addOrder()" type="submit"><img width=100 src="https://i2.wp.com/anglicanfrontiers.com/wp-content/uploads/2018/01/Order-Now.png?ssl=1"></button>
+          <br>
+
+          <div id="pressedbuttomID" style="display:none;">
+            <p class="headers">Your order </p>
+            Food:
+            <div v-for="burger in checkedBurgers">{{burger}}</div>
+            <br>
+            Name: {{deliveryName}} <br>
+            E-mail: {{deliveryMail}} <br>
+            <!--      Street: {{deliveryStreet}} <br>
+            House number: {{deliveryHouse}} <br> -->
+            Payment method: {{selectedPaymentMethod}} <br>
+            Gender: {{gender}}
+          </div>
+        </section>
+
       </div>
 
+    </body>
+  </main>
 
-    <br>
-    <button id="orderbuttom" v-on:click="markDone()" type="submit"><img width=100 src="https://i2.wp.com/anglicanfrontiers.com/wp-content/uploads/2018/01/Order-Now.png?ssl=1"></button>
-    <br>
-
-    <div id="pressedbuttomID" style="display:none;">
-      <p class="headers">Your order </p>
-      Food: {{checkedBurgers}}<br><br>
-      Name: {{deliveryName}} <br>
-      E-mail: {{deliveryMail}} <br>
-<!--      Street: {{deliveryStreet}} <br>
-      House number: {{deliveryHouse}} <br> -->
-      Payment method: {{selectedPaymentMethod}} <br>
-      Gender: {{gender}}
-    </div>
-  </section>
-
-
-
-
-<!--    Your order: {{checkedBurgers}}
-<!--    <br><div v-for="orderItem in orderArray">{{orderItem}}</div> -->
-
-<!--  <p id="orderText" style="display:none" v-for="orderItem in orderArray">{{orderItem}}</p> -->
-
-</div>
-
-</body>
-</main>
-
-<hr>
-<footer>
-  © 2018 Fries before Guys
-</footer>
-
-
-
-</html>
+  <hr>
+  <footer>
+    © 2018 Fries before Guys
+  </footer>
+  </html>
